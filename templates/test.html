@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>A Few Steps {{ title }}</title>
+		<link rel="stylesheet" href="/media/css/custom-theme/custom.css" type="text/css" />
+		<script type="text/javascript" src="/media/js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script type="text/javascript" src="/media/development-bundle/ui/jquery.ui.accordion.js"></script>
+ 		<script type="text/javascript" src="/media/development-bundle/ui/jquery.ui.core.js"></script>
+ 		<script type="text/javascript" src="/media/development-bundle/ui/jquery.ui.widget.js"></script>
+ 		<style lang="text/CSS">
+			.cell{
+				text-align: 		center;
+				cursor: 			pointer;
+				text-decoration: 	none;
+			}
+			.cell2{
+				text-align: 		center;
+				background-color:	#338811;
+				cursor: 			pointer;
+				text-decoration: 	none;
+			}
+			.link{
+				text-decoration: 	none;
+				color: 				#ffffff;
+			}
+			.error{
+				color: 				red;
+			}
+			
+			.fieldWrapper{
+				font-family:   		Cantarell;
+				border-collapse: 	collapse;
+				border-width:		0px;
+				background-color:	#FFF;
+				margin-bottom:		15px;
+				margin-left:		50px;
+			}
+			.profilebox{
+				background-color: 	#CCD;
+				margin-left: 		2%;
+				width:				45%;
+				padding:			20px;
+				float:				left;
+				height:				500px;
+				margin-bottom:		25px;
+			}
+			
+			.databox{
+				background-color:	#FFFFEE;
+				text-align:			center;
+				width:				90px;
+			}
+			.label{
+				width: 360px;
+			}
+			
+		</style>
+		<script>
+
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+
+		</script>
+		<link href='http://fonts.googleapis.com/css?family=Cantarell:400,700' rel='stylesheet' type='text/css'>
+		<meta name="author" content="Noah Weinthal" />
+		<!-- Date: 2012-06-07 -->
+	</head>
+	<body style="margin-left: 0px; font-family: Cantarell">
+		<div style="font-size: 20pt; letter-spacing: 2px; margin-bottom: 5px; margin-left: 50px; margin-top:20px;"> 
+			<img src="http://afewsteps.org/4eFTWB2u/wp-content/uploads/2011/05/SunSymbol.jpg" alt="Sun Logo" width="40" style="margin-right: -10px;"> 
+			<b>aFewSteps.org <strong style="color: #88bb55">alpha</strong></b>
+		</div>
+
+		<div style="
+		font-size: 			small;
+		vertical-align:		bottom;
+		background-color: 	#88bb55;
+		color: 				white;
+		margin-bottom: 		15px;
+		height: 			30px;
+		"> 
+			<table style="height: 100%; width: 30%; vertical-align: middle; margin-left:50px; ">
+				<tr>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/login/" class="link">Home</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/update/" class="link">Update Data</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/profile/" class="link">My Profile</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/login/" class="link">My Group</a> </td>
+					{% if logged_in %}
+						<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/logout/" class="link">Logout</a> </td>
+					{% else %}
+						<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/logout/" class="link">Sign Up</a> </td>
+					{% endif %}
+				</tr>					
+			</table>
+		</div>
+
+
+
+		<meta charset="utf-8">
+	
+	
+	
+	
+	
+	
+	
+	<script>
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+	</script>
+
+
+
+<div class="demo">
+
+<div id="accordion">
+	<h3><a href="#">Section 1</a></h3>
+	<div>
+		<p>
+		Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+		ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+		amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+		odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+		</p>
+	</div>
+	<h3><a href="#">Section 2</a></h3>
+	<div>
+		<p>
+		Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+		purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+		velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+		suscipit faucibus urna.
+		</p>
+	</div>
+	<h3><a href="#">Section 3</a></h3>
+	<div>
+		<p>
+		Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+		Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+		ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+		lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+		</p>
+		<ul>
+			<li>List item one</li>
+			<li>List item two</li>
+			<li>List item three</li>
+		</ul>
+	</div>
+	<h3><a href="#">Section 4</a></h3>
+	<div>
+		<p>
+		Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+		et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+		faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+		mauris vel est.
+		</p>
+		<p>
+		Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+		inceptos himenaeos.
+		</p>
+	</div>
+</div>
+
+</div>
+	</body>
+</html>
+

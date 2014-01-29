@@ -1,0 +1,69 @@
+{% include "top.html" %}
+	<body class="standard">
+		{%include "logo.html" %}
+		{% include "navbar.html" %}
+		<div style="margin: auto" class="profilebox"> 
+		<div style="float: left; position: relative; width: 50%;">
+			<span style="
+				font-weight: 700;
+			"><b>Eco-Profile to Date</b></span>
+			<table style="margin-bottom: 40px; height: 70%;" cellspacing="12px">
+				<tr>
+					<td class= "label">Overall Impact Score (Lower is Better):</td>
+					<td class="databox"> {{ green_score }}</td>
+				</tr>
+				<tr>
+					<td class= "label">Gallons of Water Used:</td>
+					<td class="databox">{{ water_gal }}</td>
+				</tr>
+				<tr>
+					<td class= "label">Gallons of Gasoline Used:</td>
+					<td class="databox">{{ gas_gal }}</td>
+				</tr>
+				<tr>
+					<td class= "label">kWh of Electricity Consumed:</td>
+					<td class="databox">{{ kwh }}</td>
+				</tr>
+				<tr>
+					<td  class= "label" >
+						Gallons of Trash Generated:
+					</td>
+					<td class="databox">
+						{{ trash }}
+					</td>
+				</tr>
+				<tr>
+					<td class= "label">
+						CCF of Natural Gas:
+					</td>
+					<td class="databox">
+						{{ natgas }}
+					</td>
+				</tr>
+				<tr>
+					<td class= "label">
+						Gallons of Heating Oil:
+					</td>
+					<td class="databox">
+						{{ heating_oil }}
+					</td>
+				</tr>
+			</table>
+			Update your profile with this month's data to see your most current scores
+		</div>	
+		<div class="graph_profile" style="background-image: url({{ profile_graph_url }})">
+			<div style="margin-bottom: 20px;"> Impact Score over the last six months: <br> Coming Soon: View Different Graphs for Different Data</div>
+			<div class = "graphbox">
+			{% for height in heights %}
+			<div class = "graphbar_container">
+				<div class = "graph_spacer" style="height: {{height.1}}%"> </div>
+				<div class = "graphbar" style="height: {{height.0}}%;">  {{height.2}} </div>
+				<div class = "labels"> {{height.3}}</div>
+			</div>
+			{% endfor %}
+		</div>
+		</div>
+		</div>
+	</body>
+</html>
+

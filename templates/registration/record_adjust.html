@@ -1,0 +1,150 @@
+{% include "top.html" %}
+
+<body class="standard">
+{% include "logo.html" %}
+{% include "navbar.html" %}
+		<!-- TODO:  Error Handling -->
+		<!-- TODO:  Handle where recods already exist -->
+	<div class="profilebox">
+	<h3 class="fieldWrapper"> View &amp; Update your A Few Steps monthly records</h3>		
+		<div>
+			To Begin: Enter a month and year to view or create a snapshot of your impact. 
+		</div>
+		{% if message %}
+		{{ message }}
+			{% if error%}
+				{{error}}
+			{% endif%}
+		{% else %}
+		debug.
+		{% endif %}
+		<div>
+			
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{ form.as_table }}
+				<input type="submit" value="OK"/>
+			</form>
+
+		</div>
+		<!---
+		<form action="/accounts/update/" method="POST">
+			{% csrf_token %}
+			{% if error %}
+				<div class="fieldWrapper" style="background-color: #FF3333">Error: {{error}}</div>
+			{% endif %}
+			<div id="accordion" style="width: 70%; font-size: 82%; margin-left: 50px; margin-bottom: 20px;">
+			    <h3><a href="#">Monthly Data</a></h3>
+			    <div>
+				<table cellspacing="10px" style="margin-top: 10px; margin-bottom: 10px">
+					<tr>
+						<td>
+							Current Month:
+						</td>
+						<td>
+							{{ form.date_on_bills }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Water Used:
+						</td>
+						<td>
+							{{ form.water_bill }}
+						</td>
+						<td>
+							(in gallons)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Electricity Used:
+						</td>
+						<td>
+							{{ form.electric_bill }}
+						</td>
+						<td>
+							( in killowatt-hours [KWh])
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Trash Generated:
+						</td>
+						<td>
+							{{ form.trash_weight }}
+						</td>
+						<td>
+							(in gallons)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Gasoline Burned:
+						</td>
+						<td>
+							{{ form.gas}}
+						</td>
+						<td>
+							(in gallons)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Heating Oil Used:
+						</td>
+						<td>
+							{{ form.heating_oil }}
+						</td>
+						<td>
+							(in gallons)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Natural Gas Used:
+						</td>
+						<td>
+							{{ form.natural_gas }}
+						</td>
+						<td>
+							(in CCF)
+						</td>
+					</tr>
+				</table>
+				</div>
+				<h3><a href="#">Advanced Options</a></h3>
+			    	<div>
+			    		<table cellspacing="10px" style="margin-top: 10px; margin-bottom: 10px">
+					
+					<tr>
+						<td>
+							Update House Square Footage:
+						</td>
+						<td>
+							{{ form.house_sq }}
+						</td>
+
+					</tr>
+					<tr>
+						<td>
+							Number of Occupants this Month:
+						</td>
+						<td>
+							{{ form.occupants }}
+						</td>
+
+					</tr>
+
+				</table>
+			    	</div>
+			</div>
+  			<div class="fieldWrapper">
+			<input type="submit" value="Submit" class="ui-button"/>
+			</div>
+		</form>
+		-->
+		</div>
+	</body>
+</html>
+

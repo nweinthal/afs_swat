@@ -1,0 +1,14 @@
+<div class="navbar_background">
+			<table style="height: 100%; width: 400px; vertical-align: middle; margin-left:50px; ">
+				<tr>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'" > <a href="/accounts/login/" class="link">Home</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/update/" class="link">Update Data</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/profile/" class="link">My Profile</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/login/" class="link">My Group</a> </td>
+					<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/register/" class="link">Sign Up</a> </td>
+					{% if logged_in %}
+						<td class="cell" onmouseover="this.className='cell2'" onmouseout="this.className='cell'"> <a href="/accounts/logout/" class="link">Logout</a> </td>
+					{% endif %}
+				</tr>					
+			</table>
+</div>

@@ -1,0 +1,49 @@
+{% include "top.html" %}
+	<body class="standard">
+		{%include "logo.html" %}
+		{% include "navbar.html" %}
+		<div class="loginbox">
+			<div class="loginform">
+			{% if form.errors %}
+	    	<p class="error">The username/password combination you entered is invalid</p>
+	  		{% endif %}
+		<strong>
+			Log in here to update and view your records
+		</strong>
+		  <form action="" method="post">
+		  	<p>
+		    	<label for="username">Username:</label>
+		    	<input type="text" name="username" value="" id="username" class="form_element">
+		   </p>
+		   <p>
+		   		<label for="password">Password:</label>
+		    	<input type="password" name="password" value="" id="password" class="form_element"
+		   </p>
+		   <p>
+		   	<input type="submit" value="Login" / class="form_element" style="padding:5px; font-style: bold; padding-left: 10px; padding-right: 10px">
+		   	<strong style="font-size: small">or <a href="http://afs.swarthmore.edu/register">create an account</a></strong>
+		   </p>
+		    <input type="hidden" name="next" value="{{ next|escape }}" />
+		    {% csrf_token %}
+		  </form> 
+		  </div>
+		  <br>
+		  <strong>About aFewSteps.org:</strong>
+		  <p style="font-size: small">
+		  	The mission of aFewSteps.org is to raise awareness of energy use in the four communities of Nether Providence, 
+		  	Rose Valley, Rutledge, and Swarthmore and to provide our residents, schools, businesses, and governments with 
+		  	the know-how to save money and reduce greenhouse gases at least 20% by the year 2020.
+		  </p>
+		  <strong>About the Impact Tracker:</strong>
+		  <p style="font-size: small">
+		  	The impact tracker is a web application designed to make it easy to keep track of your resource usage over time.
+		  	With a free account you can store information like water and electricity bills, as well as information about 
+		  	trash generation and heating usage.  You can then compare your usage to your neighbors and the rest of the community, 
+		  	and learn about quick and easy ways to save resources and money.
+		  </p>
+	  </div>
+	  <span style="background-color: white;"> Powered by Django</span>
+	  Designed and Coded by <a href="http://arqitechmedia.com">Noah Weinthal</a>
+	</body>
+</html>
+

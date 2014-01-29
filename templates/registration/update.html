@@ -1,0 +1,101 @@
+{% include "top.html" %}
+
+<body class="standard">
+{% include "logo.html" %}
+{% include "navbar.html" %}
+
+	<div class="profilebox">
+	<h3 class="fieldWrapper"> View &amp; Update your aFewSteps monthly records</h3>		
+		<div>
+		</div>
+		{% if message %}
+		{{ message }}
+			{% if error %}
+				{{ error }}
+			{% endif %}
+		{% else %}
+		Note this tool is currently under construction and may be unavailable.
+		{% endif %}
+		<div>
+			{% if form_method = "GET"%}
+			<form action = "" method = "GET">
+				{% for element in form %}
+				<p> {{element.label }}  &nbsp; &nbsp; {{ element }}</p>
+				{% endfor %}
+				<input type="submit" value="OK"/>
+			</form>
+			{% else %}
+			<form action = "" method = "POST" style = "width: 65%">{% csrf_token %}
+			Update your data here.  Don't worry if you don't have a number for everything
+			just yet.  Fill in what you have and leave the rest as '0'.  You can always come
+			back and edit this month later.  If you use heating oil, leave natural gas as '0'
+			and vice versa. 
+				<table>
+					<tr ><td>{{ form.date_on_bills.errors}}</td></tr>
+					<tr style="visibility: hidden;"><td>Record Month: </td>
+						<td>{{ form.date_on_bills }}</td>
+					</tr>
+					<tr><td>{{ form.water_bill.errors}}</td></tr>
+					<tr><td>Water Usage:</td>
+						<td>{{ form.water_bill }}</td>
+						<td class="units">(in gallons)</td>
+					</tr>
+					<tr><td>{{ form.electric_bill.errors}}</td></tr>
+					<tr><td>Electricity Consumed:</td>
+						<td>{{ form.electric_bill }}</td>
+						<td class="units">(in kWh)</td>
+					</tr>
+					<tr><td>{{ form.gas.errors}}</td></tr>
+					<tr><td>Gasoline Consumed:</td>
+						<td>{{ form.gas }}</td>
+						<td class="units">(in gallons)</td>
+					</tr>
+					<tr><td>{{ form.trash_weight.errors}}</td></tr>
+					<tr><td>Trash Volume:</td>
+						<td>{{ form.trash_weight }}</td>
+						<td class="units">(in gallons)</td>
+					</tr>
+					<tr><td>{{ form.natural_gas.errors}}</td></tr>
+					<tr><td>Natural Gas Usage:</td>
+						<td>{{ form.natural_gas }}</td>
+						<td class="units">(in Ccf)</td>
+					</tr>
+					<tr><td>{{ form.heating_oil.errors}}</td></tr>
+					<tr><td>Heating Oil Consumed:</td>
+						<td>{{ form.heating_oil }}</td>
+						<td class="units">(in gallons)</td>
+					</tr>
+				</table>
+				<br>Advanced Options:
+				These values don't always change from month to month.  If they are still
+				correct, you don't have to change anything.<br>
+				<table>
+					<tr><td>{{ form.house_sq.errors}}</td></tr>
+					<tr><td>Approximate Home Size:</td>
+						<td>{{ form.house_sq }}</td>
+						<td class="units">(in square feet)</td>
+					</tr>
+					<tr><td>{{ form.occupants.errors}}</td></tr>
+					<tr><td>Number of Occupants:</td>
+						<td>{{ form.occupants }}</td>
+						<td class="units">(in humans)</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+						</td>
+					</tr>
+					<tr> 
+						<td>
+							<input type="submit" value="Submit"/>
+							<input type="reset" value="Undo Changes" />
+						</td>	
+					</tr>
+				</table>
+			</form>
+			{% endif %}
+		</div>
+		</div>
+	</body>
+</html>
+

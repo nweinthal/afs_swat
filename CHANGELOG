@@ -1,0 +1,6 @@
+CURRENT_REVISION: 0.8.5
+
+CHANGELOG -
+- 0.7.5 - Uploaded to client server with warning message.  25-Jul-12 | 12:06
+- 0.8.0 - Synced MySQL settings, hacky fix with symlink for non-matching Django configuration. 27-Jul-12 | 13:11
+- 0.8.5 - Matplotlib now functional, graph images working and loaded 30-Jul-12 | 09:09
